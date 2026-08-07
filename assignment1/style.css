@@ -1,0 +1,621 @@
+/* Color System */
+:root {
+    --primary: #1e3a8a;       /* Deep Navy Blue */
+    --primary-dark: #172554;  /* Very Dark Navy */
+    --primary-light: #eff6ff; /* Soft Blue Tint */
+    --accent: #2563eb;        /* Classic Blue */
+    --text-main: #1e293b;     /* Dark Slate */
+    --text-muted: #475569;    /* Medium Slate */
+    --bg-main: #f1f5f9;       /* Light Gray Page Background */
+    --bg-card: #ffffff;       /* Pure White Cards */
+    --border-color: #cbd5e1;  /* Standard Border Color */
+    --border-light: #e2e8f0;  /* Subtle Grid Borders */
+    --danger: #b91c1c;        /* Government Alert Red */
+    --danger-light: #fef2f2;
+    --success: #15803d;       /* Government Success Green */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    line-height: 1.5;
+}
+
+.shell {
+    width: min(1000px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 2.5rem 0 4rem;
+    display: grid;
+    gap: 2rem;
+}
+
+/* Card & Layout Structure */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    padding: 2rem;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    border-top: 5px solid var(--primary);
+}
+
+.eyebrow {
+    display: block;
+    color: var(--accent);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin: 0 0 1rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 1.35rem;
+    color: var(--primary-dark);
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 0.5rem;
+}
+
+.lead {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+/* Rate / Tariff Box */
+.rate-box {
+    background: var(--primary-light);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: 6px;
+    padding: 1.25rem;
+}
+
+.rate-box h2 {
+    font-size: 1.15rem;
+    border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary);
+}
+
+.rate-box ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: var(--text-muted);
+}
+
+.rate-box li {
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+/* Form Styles */
+.form-card {
+    border-top: 4px solid var(--accent);
+}
+
+.bill-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.bill-form label {
+    grid-column: span 2;
+    font-weight: 600;
+    margin-bottom: -0.75rem;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.bill-form input {
+    grid-column: span 2;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: #fff;
+    color: var(--text-main);
+    font-size: 1rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.bill-form input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.bill-form button {
+    grid-column: span 2;
+    justify-self: start;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.15s ease-in-out;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    border-color: var(--border-color);
+    color: var(--text-main);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-main);
+}
+
+/* Control Panel */
+.control-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-card);
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Gov Bill Layout */
+.gov-bill {
+    background: #ffffff;
+    border: 2px solid #000000;
+    padding: 2.5rem;
+    color: #000000;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.bill-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border-bottom: 3px double #000000;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.gov-crest {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.gov-title h1 {
+    font-size: 1.6rem;
+    margin: 0;
+    color: #000000;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.gov-title .sub-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0.25rem 0 0;
+    text-transform: uppercase;
+}
+
+.gov-title .office-address {
+    font-size: 0.8rem;
+    color: #334155;
+    margin: 0.25rem 0 0;
+}
+
+.bill-title-strip {
+    background: #e2e8f0;
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.bill-title-strip h2 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin: 0;
+    border: none;
+    padding: 0;
+    color: #000000;
+}
+
+/* Meta details grid */
+.invoice-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.meta-section {
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+.meta-section h3 {
+    background: #000000;
+    color: #ffffff;
+    margin: 0;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.meta-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.meta-section th,
+.meta-section td {
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.meta-section tr:last-child th,
+.meta-section tr:last-child td {
+    border-bottom: none;
+}
+
+.meta-section th {
+    font-weight: 600;
+    color: #334155;
+    width: 40%;
+}
+
+.meta-section td {
+    color: #000000;
+}
+
+/* Sections */
+.meter-info-section,
+.calculation-section {
+    margin-bottom: 1.5rem;
+}
+
+.meter-info-section h3,
+.calculation-section h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    border-bottom: 1px solid #000000;
+    margin-top: 0;
+    margin-bottom: 0.50rem;
+    padding-bottom: 0.25rem;
+    text-transform: uppercase;
+}
+
+/* Main Data Tables */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #000000;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #f1f5f9;
+    font-weight: 700;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.highlight-row {
+    font-weight: 700;
+    background-color: #e2e8f0 !important;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-danger {
+    color: var(--danger);
+}
+
+/* Taxes, Totals Grid */
+.tax-summary-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.disclaimer-box {
+    border: 1px dashed #475569;
+    padding: 1rem;
+    border-radius: 4px;
+    background: #f8fafc;
+}
+
+.disclaimer-box h4 {
+    margin: 0 0 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.disclaimer-box ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    font-size: 0.75rem;
+    color: #475569;
+    line-height: 1.4;
+}
+
+.disclaimer-box li {
+    margin-bottom: 0.35rem;
+}
+
+.totals-box {
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background: #ffffff;
+}
+
+.totals-box table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.totals-box th,
+.totals-box td {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.totals-box th {
+    font-weight: 600;
+    color: #334155;
+}
+
+.totals-box td {
+    text-align: right;
+    font-weight: 700;
+}
+
+.totals-box tr:last-child th,
+.totals-box tr:last-child td {
+    border-bottom: none;
+}
+
+.grand-total-row {
+    background-color: #000000;
+    color: #ffffff !important;
+}
+
+.grand-total-row th,
+.grand-total-row td {
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    padding: 0.75rem !important;
+}
+
+/* Footer Section */
+.bill-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid #000000;
+    padding-top: 1.5rem;
+}
+
+.watermark-sign {
+    border: 1px solid #cbd5e1;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #f8fafc;
+}
+
+.certified-stamp {
+    font-size: 0.9rem;
+    font-weight: 900;
+    color: #1e3a8a;
+    letter-spacing: 1px;
+    margin: 0 0 0.25rem 0;
+    border: 2px solid #1e3a8a;
+    padding: 0.2rem 0.5rem;
+    display: inline-block;
+    transform: rotate(-2deg);
+}
+
+.sign-desc {
+    font-size: 0.7rem;
+    color: #64748b;
+    margin: 0.25rem 0 0 0;
+}
+
+.support-contacts {
+    text-align: right;
+    font-size: 0.75rem;
+    color: #475569;
+}
+
+.support-contacts p {
+    margin: 0.25rem 0;
+}
+
+/* Error Card Styles */
+.error-card {
+    border-top: 4px solid var(--danger);
+    background: var(--danger-light);
+}
+
+.error-card h2 {
+    color: var(--danger);
+    border-bottom: 1px solid rgba(185, 28, 28, 0.2);
+}
+
+.error {
+    color: var(--danger);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .bill-form {
+        grid-template-columns: 1fr;
+    }
+
+    .invoice-meta-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .tax-summary-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .bill-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .support-contacts {
+        text-align: center;
+    }
+}
+
+/* PRINT MEDIA CSS RULES */
+@media print {
+    /* Hide scrollbars & change canvas */
+    html, body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-size: 12pt !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .shell {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Hide non-printable panels & back-links */
+    .no-print,
+    .control-panel,
+    .btn,
+    button {
+        display: none !important;
+    }
+
+    /* Remove card styles, shadows for print */
+    .gov-bill {
+        border: none !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .bill-header {
+        border-bottom: 2px solid #000000 !important;
+    }
+
+    .bill-title-strip {
+        background: #e2e8f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .meta-section h3 {
+        background: #000000 !important;
+        color: #ffffff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .data-table th {
+        background-color: #f1f5f9 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .grand-total-row {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .grand-total-row th,
+    .grand-total-row td {
+        color: #ffffff !important;
+    }
+
+    /* Avoid page breaking in middle of blocks */
+    .gov-bill,
+    .invoice-meta-grid,
+    .meter-info-section,
+    .calculation-section,
+    .tax-summary-grid,
+    .bill-footer {
+        page-break-inside: avoid;
+    }
+}
