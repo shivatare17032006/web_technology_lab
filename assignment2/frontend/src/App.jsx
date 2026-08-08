@@ -228,10 +228,7 @@ function App() {
         {/* Form Entry Card (Left Side) */}
         <div className="card">
           <h2 className="card-title">
-            <svg style={{width:'24px', height:'24px', fill:'currentColor'}} viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-            </svg>
-            Student & Subject Registry
+            📝 Student & Subject Registry
           </h2>
 
           <form onSubmit={handleGenerateResult}>
@@ -371,13 +368,12 @@ function App() {
                         <td className="actions">
                           <button
                             type="button"
-                            className="btn btn-danger btn-icon-only"
+                            className="btn btn-danger"
                             onClick={() => handleDeleteSubject(idx)}
                             title="Remove Subject"
+                            style={{padding: '0.25rem 0.5rem', fontSize: '0.8rem'}}
                           >
-                            <svg style={{width:'18px', height:'18px', fill:'currentColor'}} viewBox="0 0 24 24">
-                              <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
-                            </svg>
+                            Delete
                           </button>
                         </td>
                       </tr>
@@ -412,16 +408,7 @@ function App() {
           
           {apiMessage && (
             <div className={`alert-card ${messageType}`}>
-              {messageType === 'success' ? (
-                <svg style={{width:'20px', height:'20px', fill:'currentColor'}} viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
-              ) : (
-                <svg style={{width:'20px', height:'20px', fill:'currentColor'}} viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
-                </svg>
-              )}
-              <span>{apiMessage}</span>
+              <span>{messageType === 'success' ? '✅ ' : '❌ '}{apiMessage}</span>
             </div>
           )}
 
@@ -433,10 +420,8 @@ function App() {
                 
                 {/* Header */}
                 <div className="report-card-header">
-                  <div className="institution-logo">
-                    <svg viewBox="0 0 24 24" style={{width: '36px', height: '36px'}}>
-                      <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5.89 12.5L12 15.83l6.11-3.33c.8-.43 1.39-1.17 1.63-2.06l-7.74 4.22-7.74-4.22c.24.89.83 1.63 1.63 2.06z"/>
-                    </svg>
+                  <div className="institution-logo" style={{fontSize: '2rem'}}>
+                    🏫
                   </div>
                   <div className="institution-name">Apex Institute of Technology</div>
                   <div className="institution-sub">Affiliated State University - Verification Division</div>
@@ -526,27 +511,8 @@ function App() {
                 {/* Signature and Verification QR representation */}
                 <div className="auth-section">
                   <div className="qr-code-placeholder">
-                    <div className="qr-box">
-                      {/* Generates a simple geometric QR code look via SVG */}
-                      <svg viewBox="0 0 100 100" style={{width:'100%', height:'100%'}}>
-                        <rect x="0" y="0" width="25" height="25" fill="#000"/>
-                        <rect x="5" y="5" width="15" height="15" fill="#fff"/>
-                        <rect x="10" y="10" width="5" height="5" fill="#000"/>
-                        <rect x="75" y="0" width="25" height="25" fill="#000"/>
-                        <rect x="80" y="5" width="15" height="15" fill="#fff"/>
-                        <rect x="85" y="10" width="5" height="5" fill="#000"/>
-                        <rect x="0" y="75" width="25" height="25" fill="#000"/>
-                        <rect x="5" y="80" width="15" height="15" fill="#fff"/>
-                        <rect x="10" y="85" width="5" height="5" fill="#000"/>
-                        {/* Random blocks to mimic QR code details */}
-                        <rect x="35" y="10" width="10" height="15" fill="#000"/>
-                        <rect x="55" y="5" width="15" height="10" fill="#000"/>
-                        <rect x="30" y="35" width="20" height="15" fill="#000"/>
-                        <rect x="60" y="45" width="15" height="25" fill="#000"/>
-                        <rect x="35" y="65" width="20" height="10" fill="#000"/>
-                        <rect x="80" y="55" width="10" height="15" fill="#000"/>
-                        <rect x="50" y="80" width="20" height="10" fill="#000"/>
-                      </svg>
+                    <div className="qr-box" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#eee', fontSize: '0.6rem', textAlign: 'center', fontWeight: 'bold'}}>
+                      [QR CODE]
                     </div>
                     <div className="qr-desc">
                       Scan to verify transcript authenticity online.
@@ -564,16 +530,10 @@ function App() {
               {/* Action Buttons */}
               <div className="report-actions">
                 <button className="btn btn-secondary" onClick={handleReset}>
-                  <svg style={{width:'18px', height:'18px', fill:'currentColor'}} viewBox="0 0 24 24">
-                    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
-                  </svg>
-                  Register New Student
+                  🔄 Register New Student
                 </button>
                 <button className="btn btn-primary" onClick={handlePrint}>
-                  <svg style={{width:'18px', height:'18px', fill:'currentColor'}} viewBox="0 0 24 24">
-                    <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
-                  </svg>
-                  Print Report Card
+                  🖨️ Print Report Card
                 </button>
               </div>
             </>

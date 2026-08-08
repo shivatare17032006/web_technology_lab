@@ -1,36 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
-
 :root {
-  --bg-dark: #090d16;
-  --bg-card: #131b2e;
-  --bg-input: #1a243d;
-  --border-color: rgba(148, 163, 184, 0.12);
-  --border-hover: rgba(217, 119, 6, 0.4);
+  --bg-light: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-input: #ffffff;
+  --border-color: #ced4da;
+  --border-hover: #80bdff;
   
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-dark: #1e293b;
+  --text-main: #212529;
+  --text-muted: #6c757d;
+  --text-dark: #212529;
   
-  --accent-gold: #d97706;
-  --accent-gold-light: #f59e0b;
-  --accent-gold-gradient: linear-gradient(135deg, #f59e0b, #d97706);
+  --accent-primary: #007bff;
+  --accent-primary-hover: #0069d9;
   
-  --success: #10b981;
-  --success-bg: rgba(16, 185, 129, 0.1);
-  --error: #ef4444;
-  --error-bg: rgba(239, 68, 68, 0.1);
-  --info: #3b82f6;
+  --success: #28a745;
+  --success-bg: #d4edda;
+  --success-text: #155724;
+  --error: #dc3545;
+  --error-bg: #f8d7da;
+  --error-text: #721c24;
+  --info: #17a2b8;
   
-  --font-sans: 'Outfit', sans-serif;
-  --font-serif: 'Playfair Display', serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-  --shadow-glow: 0 0 15px rgba(217, 119, 6, 0.15);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.05);
   
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.2s ease-in-out;
 }
 
 * {
@@ -41,7 +37,7 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-dark);
+  background-color: var(--bg-light);
   color: var(--text-main);
   min-height: 100vh;
   line-height: 1.5;
@@ -56,16 +52,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: var(--bg-light);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--bg-input);
+  background: var(--border-color);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-gold);
+  background: var(--text-muted);
 }
 
 /* Print optimizations */
